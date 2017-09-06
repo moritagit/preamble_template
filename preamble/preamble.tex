@@ -1,0 +1,91 @@
+%タイトル
+\date{\today}
+
+
+%パッケージ
+\usepackage{amsmath, amssymb, amsfonts, physics, bbm}		%数式
+%\usepackage{emath, emathFx}										%数式拡張（未実装）
+\usepackage{physics}
+\usepackage{siunitx}													%単位
+\usepackage{fancyhdr, lastpage}										%ヘッダー&フッター
+\usepackage{hyperref}													%リンク
+\usepackage{url}														%URL
+\usepackage{pxjahyper}												%リンク修正
+\usepackage{overcite}													%引用
+\usepackage{pxrubrica}												%ルビ
+\usepackage[table]{xcolor}											%表&色
+\usepackage{longtable, float, multirow, array, listliketab, enumitem}
+\usepackage{tcolorbox}												%tcolorbox
+\usepackage{listings, plistings}										%ソースコードの埋め込み
+\usepackage{graphicx}													%図
+\usepackage{subcaption, wrapfig}									%図の配置
+\usepackage{tikz}														%TikZ
+%\usetikzlibrary{meta.arrow, angle}									%TikZのライブラリ（未実装?）
+\usepackage{import, grffile}											%ファイル管理
+\usepackage{xparse}													%マクロ作成用
+\usepackage[T1]{fontenc}											%フォント
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{mathptmx}
+\usepackage[scaled]{helvet}
+\renewcommand{\ttdefault}{pcr}
+
+
+%hyperrefのsetup
+\hypersetup{%
+	bookmarks=true,%
+	bookmarksnumbered=true,%
+	hidelinks,%
+	colorlinks=true,%
+	linkcolor=black,%
+	urlcolor=cyan,%
+	citecolor=black,%
+	filecolor=magenta,%
+	setpagesize=false,%
+	pdftitle={},%
+	pdfauthor={R.Morita},%
+	pdfkeywords={}
+	}
+
+
+%siunitxのsetup
+\sisetup{%
+	%detect-family = true,%						%太字の設定
+	detect-inline-family = math,%
+	detect-weight = true,%
+	detect-inline-weight = math,%
+	%input-product = *,%							%*で乗算
+	quotient-mode = fraction,%					%/で分数に
+	fraction-function = \frac,%
+	inter-unit-product = \ensuremath{\hspace{-1.5pt}\cdot\hspace{-1.5pt}},%	%単位の区切りを\cdotに
+	per-mode = symbol,%							%単位の区切り（分数）を/に
+	product-units = single,%						%複数の数値にわたって単位を付けるとき最後にだけ付ける
+	}
+
+
+%字間
+\kanjiskip 0pt plus 0pt minus 0pt
+\xkanjiskip 0.25zw plus 0.125zw minus 0.125zw
+%行間
+\setlength{\lineskiplimit}{6pt}
+\setlength{\lineskip}{6pt}
+%数式インデント
+\setlength{\mathindent}{5zw}
+
+
+%引用符を肩付けに
+\renewcommand{\citeform}[1]{[#1]}
+
+
+%文字式の単位〔roman〕
+\newcommand{\unitis}[1]{%	
+	\mathrm{〔#1〕}
+	}
+
+
+%マクロ
+%丸（EmathFxにpzdオプションを付けると有効）
+%\let\maru\pzdmaru
+
+
