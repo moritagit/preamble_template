@@ -3,7 +3,7 @@
 
 
 %パッケージ
-\usepackage{amsmath, amssymb, amsfonts, physics, bbm}		%数式
+\usepackage{amsmath, amssymb, amsfonts, physics, mathrsfs}		%数式
 %\usepackage{emath, emathFx}										%数式拡張（未実装）
 \usepackage{physics}
 \usepackage{siunitx}													%単位
@@ -14,14 +14,15 @@
 \usepackage{overcite}													%引用
 \usepackage{pxrubrica}												%ルビ
 \usepackage[table]{xcolor}											%表&色
-\usepackage{longtable, float, multirow, array, listliketab, enumitem}
+\usepackage{longtable, float, multirow, array, listliketab, enumitem, tabularx}
 \usepackage{tcolorbox}												%tcolorbox
 \usepackage{listings, plistings}										%ソースコードの埋め込み
 \usepackage{graphicx}													%図
 \usepackage{subcaption, wrapfig}									%図の配置
 \usepackage{tikz}														%TikZ
-%\usetikzlibrary{meta.arrow, angle}									%TikZのライブラリ（未実装?）
+\usetikzlibrary{calc, patterns, decorations, angles, calendar, backgrounds, shadows, mindmap}
 \usepackage{import, grffile}											%ファイル管理
+\usepackage{standalone}
 \usepackage{xparse}													%マクロ作成用
 \usepackage[T1]{fontenc}											%フォント
 \usepackage{textcomp}
@@ -30,22 +31,23 @@
 \usepackage{mathptmx}
 \usepackage[scaled]{helvet}
 \renewcommand{\ttdefault}{pcr}
+\usepackage{bm}
 
 
 %hyperrefのsetup
 \hypersetup{%
-	bookmarks=true,%
-	bookmarksnumbered=true,%
+	bookmarks = true,%
+	bookmarksnumbered = true,%
 	hidelinks,%
-	colorlinks=true,%
-	linkcolor=black,%
-	urlcolor=cyan,%
-	citecolor=black,%
-	filecolor=magenta,%
-	setpagesize=false,%
-	pdftitle={},%
-	pdfauthor={R.Morita},%
-	pdfkeywords={}
+	colorlinks = true,%
+	linkcolor = black,%
+	urlcolor = cyan,%
+	citecolor = black,%
+	filecolor = magenta,%
+	setpagesize = false,%
+	pdftitle = {},%
+	pdfauthor = {R.Morita},%
+	pdfkeywords = {},%
 	}
 
 
