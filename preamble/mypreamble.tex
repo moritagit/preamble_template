@@ -1,93 +1,96 @@
-%タイトル
+%% title
 \date{\today}
 
 
-%パッケージ
-\usepackage{amsmath, amssymb, amsfonts, physics, mathrsfs}		%数式
-%\usepackage{emath, emathFx}										%数式拡張（未実装）
+%% packages and libraries
+\usepackage{amsmath, amssymb, amsfonts, physics, mathrsfs}	%math
+%\usepackage{emath, emathFx}										%emath (not installed)
 \usepackage{physics}
-\usepackage{siunitx}													%単位
-\usepackage{fancyhdr, lastpage}										%ヘッダー&フッター
-\usepackage{hyperref}													%リンク
+\usepackage{siunitx}													%units
+\usepackage{fancyhdr, lastpage}										%header and footer
+\usepackage{hyperref}													%link
 \usepackage{url}														%URL
-\usepackage{pxjahyper}												%リンク修正
-\usepackage{overcite}													%引用
-\usepackage{pxrubrica}												%ルビ
-\usepackage[table]{xcolor}											%表&色
-\usepackage{longtable, float, multirow, array, listliketab, enumitem, tabularx}
+\usepackage{pxjahyper}												%arrow Japanese for hyperref
+\usepackage{overcite}													%citation
+\usepackage{pxrubrica}												%Japanese rubi
+\usepackage[table]{xcolor}											%tables and color
+\usepackage{longtable, float, multirow, array, listliketab, enumitem, tabularx}	%tables
 \usepackage{tcolorbox}												%tcolorbox
-\usepackage{listings, plistings}										%ソースコードの埋め込み
-\usepackage{graphicx}													%図
-\usepackage{subcaption, wrapfig}									%図の配置
+\usepackage{listings, plistings}										%source cord
+\usepackage{comment}												%comment out over 2 lines
+\usepackage{graphicx}													%figure
+\usepackage{subcaption, wrapfig}									%configuration
 \usepackage{tikz}														%TikZ
-\usetikzlibrary{calc, patterns, decorations, angles, calendar, backgrounds, shadows, mindmap}
-\usepackage{import, grffile}											%ファイル管理
+\usetikzlibrary{calc, patterns, decorations, angles, backgrounds, shadows, calendar, mindmap}
+\usepackage{import, grffile}											%management files
 \usepackage{standalone}
-\usepackage{xparse}													%マクロ作成用
-\usepackage[T1]{fontenc}											%フォント
+\usepackage{xparse}													%make macros
+\usepackage[T1]{fontenc}											%fonts
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{mathptmx}
 \usepackage[scaled]{helvet}
 \renewcommand{\ttdefault}{pcr}
+\usepackage[deluxe]{otf}
+\usepackage[noalphabet]{pxchfon}
 \usepackage{bm}
 
 
-%hyperrefのsetup
-\hypersetup{%
-	bookmarks = true,%
-	bookmarksnumbered = true,%
-	hidelinks,%
-	colorlinks = true,%
-	linkcolor = black,%
-	urlcolor = cyan,%
-	citecolor = black,%
-	filecolor = magenta,%
-	setpagesize = false,%
-	pdftitle = {},%
-	pdfauthor = {R.Morita},%
-	pdfkeywords = {},%
+%% set up for hyperref
+\hypersetup{
+	bookmarksnumbered = true,
+	hidelinks,
+	colorlinks = true,
+	linkcolor = black,
+	urlcolor = cyan,
+	citecolor = black,
+	filecolor = magenta,
+	setpagesize = false,
+	pdftitle = {},
+	pdfauthor = {R.Morita},
+	pdfkeywords = {},
 	}
 
-
-%siunitxのsetup
+%% set up for siunitx
 \sisetup{%
-	%detect-family = true,%						%太字の設定
-	detect-inline-family = math,%
-	detect-weight = true,%
-	detect-inline-weight = math,%
-	%input-product = *,%							%*で乗算
-	quotient-mode = fraction,%					%/で分数に
-	fraction-function = \frac,%
-	inter-unit-product = \ensuremath{\hspace{-1.5pt}\cdot\hspace{-1.5pt}},%	%単位の区切りを\cdotに
-	per-mode = symbol,%							%単位の区切り（分数）を/に
-	product-units = single,%						%複数の数値にわたって単位を付けるとき最後にだけ付ける
+	%detect-family = true,						%bold
+	detect-inline-family = math,
+	detect-weight = true,
+	detect-inline-weight = math,
+	%input-product = *,							%multiply by *
+	quotient-mode = fraction,						%fraction by /
+	fraction-function = \frac,
+	inter-unit-product = \ensuremath{\hspace{-1.5pt}\cdot\hspace{-1.5pt}},	%devide different units by \cdot
+	per-mode = symbol,%							%devide different unit by /
+	product-units = single,%						%
 	}
 
 
-%字間
-\kanjiskip 0pt plus 0pt minus 0pt
-\xkanjiskip 0.25zw plus 0.125zw minus 0.125zw
-%行間
-\setlength{\lineskiplimit}{6pt}
-\setlength{\lineskip}{6pt}
-%数式インデント
+%% fonts
+\setminchofont{ipam.ttf}
+\setgothicfont{ipag.ttf}
+\fontsize{14Q}{30H}
+
+
+%% layout
+%space between letters
+\kanjiskip 0zw plus 1zw minus 0zw
+\xkanjiskip 0.25zw plus 1pt minus 1pt
+%space between lines
+\setlength{\lineskiplimit}{2pt}
+\setlength{\lineskip}{2pt}
+%indent
+\setlength{\parindent}{1zw}
 \setlength{\mathindent}{5zw}
 
 
-%引用符を肩付けに
+%put citation mark on index zone
 \renewcommand{\citeform}[1]{[#1]}
 
 
-%文字式の単位〔roman〕
+%unit of formulas 〔roman〕
 \newcommand{\unitis}[1]{%	
 	\mathrm{〔#1〕}
 	}
-
-
-%マクロ
-%丸（EmathFxにpzdオプションを付けると有効）
-%\let\maru\pzdmaru
-
 
