@@ -6,7 +6,6 @@
 \usepackage{amsmath, amssymb, amsfonts, mathtools, cases, physics, mathrsfs}	%math
 %\usepackage{emath, emathFx}										%emath (not installed)
 \usepackage{physics}
-\usepackage{siunitx}													%units
 \usepackage{fancyhdr, lastpage}										%header and footer
 \usepackage{hyperref}													%link
 \usepackage{url}														%URL
@@ -22,7 +21,7 @@
 \usepackage{graphicx}													%figure
 \usepackage{subcaption, wrapfig}									%configuration
 \usepackage{tikz}														%TikZ
-\usetikzlibrary{calc, patterns, decorations, angles, backgrounds, shadows, calendar, mindmap}
+\usetikzlibrary{calc, patterns, decorations, angles, backgrounds, shadows}
 \usepackage{import, grffile}											%management files
 \usepackage{standalone}
 \usepackage{xparse}													%make macros
@@ -36,6 +35,7 @@
 \usepackage[deluxe]{otf}
 \usepackage[noalphabet]{pxchfon}
 \usepackage{bm}
+\usepackage{siunitx}													%units
 
 
 %% set up for hyperref
@@ -88,6 +88,10 @@
 
 %put citation mark on index zone
 \renewcommand{\citeform}[1]{[#1]}
+
+
+%hyphen for math mode
+\DeclareMathSymbol{\mhyphen}{\mathalpha}{operators}{`-}
 
 
 %unit of formulas 〔roman〕
