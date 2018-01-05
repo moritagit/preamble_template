@@ -7,6 +7,7 @@
 %\usepackage{emath, emathFx}										%emath (not installed)
 \usepackage{physics}
 \usepackage{fancyhdr, lastpage}										%header and footer
+\usepackage{titlesec}													%title design
 \usepackage{hyperref}													%link
 \usepackage{url}														%URL
 \usepackage{pxjahyper}												%arrow Japanese for hyperref
@@ -21,7 +22,8 @@
 \usepackage{graphicx}													%figure
 \usepackage{subcaption, wrapfig}									%configuration
 \usepackage{tikz}														%TikZ
-\usetikzlibrary{calc, patterns, decorations, angles, backgrounds, shadows}
+\usetikzlibrary{calc, patterns, decorations, decorations.pathmorphing, angles, backgrounds, shadows}
+\usepackage{pdfpages}												%include PDF
 \usepackage{import, grffile}											%management files
 \usepackage{standalone}
 \usepackage{xparse}													%make macros
@@ -35,7 +37,9 @@
 \usepackage[deluxe]{otf}
 \usepackage[noalphabet]{pxchfon}
 \usepackage{bm}
+\usepackage{lscape}
 \usepackage{siunitx}													%units
+\usepackage{bigstrut}
 
 
 %% set up for hyperref
@@ -52,6 +56,7 @@
 	pdfauthor = {R.Morita},
 	pdfkeywords = {},
 	}
+
 
 %% set up for siunitx
 \sisetup{%
@@ -86,6 +91,29 @@
 \setlength{\mathindent}{5zw}
 
 
+%header & footer
+\fancypagestyle{jsarticledefault}{%
+	%reset
+	\fancyhf{}
+	%layout
+	\setlength{\textwidth}{453pt}
+	\setlength{\hoffset}{0pt}
+	\setlength{\oddsidemargin}{0pt}
+	\setlength{\marginparsep}{18pt}
+	\setlength{\marginparwidth}{18pt}
+	\setlength{\textheight}{634pt}
+	\setlength{\voffset}{0pt}
+	\setlength{\topmargin}{4pt}
+	\setlength{\headheight}{20pt}
+	\setlength{\headsep}{18pt}
+	\setlength{\footskip}{28pt}
+	%header
+	\renewcommand{\headrule}{}
+	%footer
+	\cfoot{\thepage}
+	}
+
+
 %put citation mark on index zone
 \renewcommand{\citeform}[1]{[#1]}
 
@@ -96,6 +124,6 @@
 
 %unit of formulas 〔roman〕
 \newcommand{\unitis}[1]{%	
-	\mathrm{〔#1〕}
+	\text{〔\si{#1}〕}
 	}
 
